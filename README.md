@@ -14,9 +14,7 @@ ADMIN_USER_EMAIL=******@test.co.uk
 EOF
 ```
 
-## Run locally
+## Run Locally
 
 `docker-compose up`
-
-Running 
 
