@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt
 
 ADD . /code/
 
-RUN chmod a+x ./build/init.sh && \
+RUN chmod a+x init.sh && \
     useradd dockerUser
 
 USER dockerUser
