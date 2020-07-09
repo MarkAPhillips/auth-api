@@ -8,7 +8,7 @@ executors:
     working_directory: ~/auth-api
 
 jobs:
-  build_deploy:
+  build:
     executor: auth-api-executor
     steps:
       - checkout
