@@ -17,9 +17,7 @@ EOF
 
 ## Run Locally
 
-`docker-compose up`
-
-Alternatively the API can be run in a virtual environment by running
+API can be run in a virtual environment by running
 
 ```
 pipenv shell
