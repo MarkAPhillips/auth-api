@@ -2,15 +2,13 @@ FROM python:3.8.3
 
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /code
+WORKDIR /app
 
-WORKDIR /code
-
-ADD requirements.txt /code/
+ADD requirements.txt /app/
 
 RUN pip install -r requirements.txt
 
-ADD . /code/
+ADD . /app/
 
 RUN chmod a+x init.sh && \
     useradd dockerUser

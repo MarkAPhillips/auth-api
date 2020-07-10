@@ -24,7 +24,7 @@ pipenv shell
 python manage.py runserver
 ```
 
-If third party apps need to be installed this should ne installed running:
+If third party apps need to be installed this should be installed running:
 
 `pipenv install ******`
 
@@ -33,4 +33,3 @@ A *requirements.txt* should be then generated as per the notes below.
 ## Notes
 
 The *requirements.sh* file is a shell script that generates the *requirements.txt* file from *Pipfile.lock*
-
