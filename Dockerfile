@@ -16,5 +16,5 @@ RUN chmod a+x init.sh && \
 USER dockerUser
 
 CMD sh init.sh $ADMIN_USER_PWD $ADMIN_USER_EMAIL && \
-    cd staticfiles && ls -l && \
+    cd staticfiles && ls -l && cd . \
     python manage.py runserver 0.0.0.0:$PORT
