@@ -7,4 +7,5 @@ if [ -e "$file" ]; then
 fi
 
 ./manage.py migrate
+./manage.py collectstatic
 ./manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin', '$2', '$1')"
