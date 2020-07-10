@@ -12,7 +12,7 @@ COPY . .
 
 RUN python manage.py collectstatic --noinput
 
-RUN python manage.py findstatic --verbosity 2 static
+RUN python manage.py findstatic css/base.css --verbosity 2
 
 RUN chmod a+x init.sh && \
     useradd dockerUser
