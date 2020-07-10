@@ -11,7 +11,8 @@ RUN pip install -r requirements.txt
 ADD . /app/
 
 RUN chmod a+x init.sh && \
-    useradd dockerUser
+    useradd dockerUser && \
+    python manage.py collectstatic --noinput
 
 USER dockerUser
 
