@@ -14,6 +14,7 @@ dj-rest-auth = "*"
 djangorestframework-simplejwt = "*"
 django-allauth = "*"
 django-environ = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "dccdb6c34543f63b087a23c8553ff060de152dde0391b6f2d7f1257d5544d449"
+            "sha256": "1419be2b8ca5e0e861d53b2a8f7871d0631ed197bf5385725a4fb24bffafd557"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -48,10 +48,10 @@
         },
         "dj-rest-auth": {
             "hashes": [
-                "sha256:e96467385ed19b812a6f0490bf7c5098e24b4d1b6c1b64d7ca295a97741a63df"
+                "sha256:f058a822ffa8764dea58750d415d3a43f038fe79acd0f5dc473704393cc5d65d"
             ],
             "index": "pypi",
-            "version": "==1.0.9"
+            "version": "==1.1.0"
         },
         "django": {
             "hashes": [
@@ -168,6 +168,14 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'",
             "version": "==1.25.9"
+        },
+        "whitenoise": {
+            "hashes": [
+                "sha256:60154b976a13901414a25b0273a841145f77eb34a141f9ae032a0ace3e4d5b27",
+                "sha256:6dd26bfda3af29177d8ab7333a0c7b7642eb615ce83764f4d15a9aecda3201c4"
+            ],
+            "index": "pypi",
+            "version": "==5.1.0"
         }
     },
     "develop": {
