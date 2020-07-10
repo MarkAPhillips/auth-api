@@ -8,7 +8,7 @@ ADD requirements.txt /app/
 
 RUN pip install -r requirements.txt
 
-ADD . /app/
+COPY . .
 
 RUN chmod a+x init.sh && \
     useradd dockerUser && \
