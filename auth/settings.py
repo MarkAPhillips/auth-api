@@ -18,7 +18,7 @@ SECRET_KEY = env('SECRET_KEY', default=get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG', default='False') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'eu-auth-api.herokuapp.com']
 
 # Application definition
 
