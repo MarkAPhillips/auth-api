@@ -65,19 +65,18 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # TODO: add whitelist when known
 CORS_ORIGIN_ALLOW_ALL = True
 
-REST_USE_JWT = True
-
-JWT_AUTH_COOKIE = '__auth__'
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 SITE_ID = 1
 
+# dj_rest_auth JWT configuration
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ]
 }
+
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = '__auth__'
 
 ROOT_URLCONF = 'auth.urls'
 
