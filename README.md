@@ -11,23 +11,20 @@ cat > build/.env << EOF
 DEBUG=True
 SECRET_KEY=**********
 ADMIN_USER_PWD=***********
-ADMIN_USER_EMAIL=******@test.co.uk
+ADMIN_USER_EMAIL=******@********
 EOF
 ```
 
 ## Run Locally
 
-API can be run in a virtual environment by running
-
+```
+docker-compose up
 ```
 
-```
+Navigate to `http://localhost:8000/admin`
 
-If third party apps need to be installed this should be installed running:
+Login using the credentials defined in the *.env* file.
 
-`pipenv install ******`
-
-A *requirements.txt* should be then generated as per the notes below.
 
 ## Notes
 
