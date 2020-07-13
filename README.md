@@ -7,7 +7,7 @@ Python (== 3.8.3)
 Ensure *env* vars are set as follows:
 
 ```
-cat > .env << EOF
+cat > build/.env << EOF
 DEBUG=True
 SECRET_KEY=**********
 ADMIN_USER_PWD=***********
@@ -20,8 +20,7 @@ EOF
 API can be run in a virtual environment by running
 
 ```
-pipenv shell
-python manage.py runserver
+
 ```
 
 If third party apps need to be installed this should be installed running:
