@@ -28,4 +28,9 @@ Login using the credentials defined in the *.env* file.
 
 ## Notes
 
-The *requirements.sh* file is a shell script that generates the *requirements.txt* file from *Pipfile.lock*
+Running the following will generate a *requirements.txt* file in the build folder:
+
+```
+pipenv shell
+pipenv lock -r > ./build/requirements.txt
+```

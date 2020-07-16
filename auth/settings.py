@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     # third party
     'rest_framework',
     'rest_framework.authtoken',
+    'dj_rest_auth',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'dj_rest_auth',
     'dj_rest_auth.registration',
     'corsheaders',
 ]
@@ -70,7 +70,7 @@ SITE_ID = 1
 
 # dj_rest_auth JWT configuration
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ]
 }
@@ -156,10 +156,10 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_CONFIRM_EMAIL_ON_GET = True
-ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = '/?verification=1'
-ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = '/?verification=1'
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'api.serializers.UserSerializer',
+    'REGISTER_SERIALIZER': 'api.serializers.NameRegistrationSerializer',
 }
+
+ACCOUNT_ADAPTER = 'api.adapters.AccountAdapter'

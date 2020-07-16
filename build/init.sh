@@ -7,4 +7,4 @@ if [ -e "$file" ]; then
 fi
 
 ./manage.py migrate
-./manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('$2', '$1')"
+./manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('$2', '$1', first_name='Admin', last_name='User')"
