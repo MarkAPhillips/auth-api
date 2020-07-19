@@ -17,5 +17,4 @@ RUN chmod a+x ./build/init.sh && \
 
 USER dockerUser
 
-CMD sh ./build/init.sh $ADMIN_USER_PWD $ADMIN_USER_EMAIL && \
-    python ./manage.py runserver 0.0.0.0:$PORT
+CMD sh ./build/init.sh $ADMIN_USER_PWD $ADMIN_USER_EMAIL $PORT

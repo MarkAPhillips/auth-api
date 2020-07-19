@@ -12,13 +12,19 @@ DEBUG=True
 SECRET_KEY=**********
 ADMIN_USER_PWD=***********
 ADMIN_USER_EMAIL=******@********
+POSTGRES_DB=auth
+POSTGRES_PASSWORD=**********
+POSTGRES_USER=postgres
 EOF
 ```
 
 ## Run Locally
 
+In the project root run:
+
 ```
-docker-compose up
+docker-compose down -v --rmi all
+docker-compose up --build
 ```
 
 Navigate to `http://localhost:8000/admin`
@@ -34,3 +40,8 @@ Running the following will generate a *requirements.txt* file in the build folde
 pipenv shell
 pipenv lock -r > ./build/requirements.txt
 ```
+
+In the production environment the DATABASE_URL is used to connect to a postgres database hosted on Heroku.
+
+Locally docker-compose spins up a postgres instance using the POSTGRES_* env variables.
+
