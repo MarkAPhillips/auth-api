@@ -26,3 +26,12 @@ jobs:
             -H "Content-Type: application/json" \
             -H "Accept: application/vnd.heroku+json; version=3.docker-releases" \
             -H "Authorization: Bearer $HEROKU_API_KEY"
+
+workflows:
+  version: 2
+  cd_pipeline:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master

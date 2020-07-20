@@ -1,19 +1,26 @@
 version: '3.3'
 
 services:
+  db: 
+    image: postgres
+    environment: 
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
   api:
     container_name: auth-api
     build: 
       context: .
       dockerfile: ./build/local/Dockerfile
-    command: 
-      - /bin/sh
-      - -c
-      - |
-        sh ./build/init.sh ${ADMIN_USER_PWD} ${ADMIN_USER_EMAIL}
-        python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/code
-      - db.sqlite3
+    command: ["./build/wait-for-it.sh", "db", "${POSTGRES_PASSWORD}", "--", "./build/init.sh ${ADMIN_USER_PWD} ${ADMIN_USER_EMAIL}"]
     ports:
       - "8000:8000" 
+    depends_on: 
+      - db
+
+volumes:
+  db-data:
