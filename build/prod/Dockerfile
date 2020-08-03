@@ -17,4 +17,4 @@ RUN chmod a+x ./build/init.sh ./build/initUsers.py && \
 
 USER dockerUser
 
-CMD sh ./build/init.sh $ADMIN_USER_EMAIL $ADMIN_USER_PWD $TEST_USER_EMAIL $TEST_USER_PWD $PORT
+CMD ./build/init.sh $ADMIN_USER_EMAIL $ADMIN_USER_PWD $TEST_USER_EMAIL $TEST_USER_PWD $PORT
