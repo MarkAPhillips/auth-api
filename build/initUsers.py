@@ -3,6 +3,7 @@
 import os, sys, django
 
 # set up django evironment
+print('PATH', sys.path)
 sys.path.append('../code')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'auth.settings')
 django.setup()
