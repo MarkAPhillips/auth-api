@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt && \
 
 COPY . /code/ 
 
-RUN chmod a+x ./build/wait-for-it.sh ./build/init.sh
+RUN chmod a+x ./build/wait-for-it.sh ./build/init.sh ./build/initUsers.py

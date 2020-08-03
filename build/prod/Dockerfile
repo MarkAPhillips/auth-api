@@ -12,9 +12,9 @@ COPY . .
 
 RUN python ./manage.py collectstatic --noinput
 
-RUN chmod a+x ./build/init.sh && \
+RUN chmod a+x ./build/init.sh ./build/initUsers.py && \
     useradd dockerUser
 
 USER dockerUser
 
-CMD sh ./build/init.sh $ADMIN_USER_PWD $ADMIN_USER_EMAIL $PORT
+CMD sh ./build/init.sh $ADMIN_USER_EMAIL $ADMIN_USER_PWD $TEST_USER_EMAIL $TEST_USER_PWD $PORT

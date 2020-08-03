@@ -16,7 +16,7 @@ services:
     build: 
       context: .
       dockerfile: ./build/local/Dockerfile
-    command: ["./build/wait-for-it.sh", "db", "${POSTGRES_PASSWORD}", "--", "./build/init.sh ${ADMIN_USER_PWD} ${ADMIN_USER_EMAIL}"]
+    command: ["./build/wait-for-it.sh", "db", "${POSTGRES_PASSWORD}", "--", "./build/init.sh ${ADMIN_USER_EMAIL} ${ADMIN_USER_PWD} ${TEST_USER_EMAIL} ${TEST_USER_PWD}"]
     ports:
       - "8000:8000" 
     depends_on: 

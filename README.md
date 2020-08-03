@@ -24,7 +24,7 @@ In the project root run:
 
 ```
 docker-compose down -v --rmi all
-docker-compose up --build
+docker-compose up --build 
 ```
 
 Navigate to `http://localhost:8000/admin`
