@@ -3,7 +3,6 @@
 import os, sys, django
 
 # set up django evironment
-print('PATH', sys.path)
 sys.path.append('../code')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'auth.settings')
 django.setup()
@@ -15,11 +14,15 @@ from allauth.account.models import EmailAddress
 # pylint: disable=unbalanced-tuple-unpacking
 _, userEmail, userPassword, testEmail, testPassword = sys.argv
 
-# create super user account
 User = get_user_model()
-User.objects.create_superuser(userEmail, userPassword, first_name='Admin', last_name='User')
+userSetUp = User.objects.filter(email=userEmail)
 
-# create test user account profile 
-testuser = User.objects.create_user(testEmail, testPassword, first_name='Test', last_name='User')
+# only add if user has not be created - applicable to prod releases only
+if not userSetUp.exists():
+    # create super user account
+    User.objects.create_superuser(userEmail, userPassword, first_name='Admin', last_name='User')
 
-EmailAddress.objects.create(user = testuser, email = testEmail, primary=True, verified=True)
+    # create test user account profile 
+    testuser = User.objects.create_user(testEmail, testPassword, first_name='Test', last_name='User')
+
+    EmailAddress.objects.create(user = testuser, email = testEmail, primary=True, verified=True)
